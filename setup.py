@@ -1,13 +1,22 @@
 #!/usr/bin/env python
 
-from setuptools import setup
+import setuptools
 
-setup(name='csplitb',
-  version='1.0',
+setuptools.setup(name='csplitb',
+  version='1.0.1',
   description='Split binary files on content boundaries',
   author='Michael White',
-  author_email='mypalmike@mypalmike.com',
+  author_email='csplitb@mypalmike.com',
   url='https://github.com/mypalmike/csplitb',
-  py_modules=['csplitb'],
-  scripts=['scripts/csplitb']
+  packages=setuptools.find_packages(),
+  include_package_data=True,
+  scripts=['scripts/csplitb'],
+  classifiers=[
+      'Operating System :: POSIX',
+      'Development Status :: 5 - Production/Stable',
+      'Environment :: Console',
+      'Intended Audience :: System Administrators',
+      'License :: OSI Approved :: GNU General Public License v2 (GPLv2)',
+      'Topic :: Utilities',
+  ],
 )
