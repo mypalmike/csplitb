@@ -1,9 +1,8 @@
 #!/usr/bin/env python
 
-import argparse
 import binascii
 import mmap
-import sys
+
 
 class CSplitB(object):
     def __init__(self, spliton, infile, number, prefix, suffix):
@@ -46,19 +45,3 @@ class CSplitB(object):
         with open(outfile, "w+b") as f:
             f.write(data)
         self.count += 1
-
-
-def main(argv = sys.argv):
-    parser = argparse.ArgumentParser(description="csplitb - Context splitter on binary data.")
-    parser.add_argument("spliton", help="Hexadecimal representation of data to split on.")
-    parser.add_argument("infile", help="Input file.")
-    parser.add_argument("-n", "--number", type=int, help="Number of zeroes to pad filename. Default is 2")
-    parser.add_argument("-f", "--prefix", help="Output file prefix. Default is xx")
-    parser.add_argument("-s", "--suffix", help="Output file suffix. Default is .dat")
-    args = parser.parse_args(argv[1:])
-
-    csplitb = CSplitB(args.spliton, args.infile, args.number, args.prefix, args.suffix)
-    return csplitb.run()
-
-if __name__ == '__main__':
-    main()

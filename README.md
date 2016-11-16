@@ -1,7 +1,7 @@
 csplitb
 =======
 
-Python tool like unix csplit but which splits binary files based on hexadecimal boundaries.
+Python tool like unix csplit but which splits binary files based on content boundaries rather than index boundaries.
 
 This is particularly useful for salvaging jpegs from a corrupted disk image.
 
