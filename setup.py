@@ -3,7 +3,7 @@
 import setuptools
 
 setuptools.setup(name='csplitb',
-  version='1.0.1',
+  version='1.0.2',
   description='Split binary files on content boundaries',
   author='Michael White',
   author_email='csplitb@mypalmike.com',
