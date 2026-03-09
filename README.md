@@ -26,4 +26,4 @@ Either of the following should create xx00.dat through xx18.dat, each starting w
 
 ## Technical details
 
-This script is a fairly minimal wrapper around Python's standard library mmap (memory mapped files) find method. Because of this, it *should* work with very large files and be near optimal performance-wise. But its reliability and speed is dependent on the operating system's and Python's implementation memory mapping implementation.
+This script is a fairly minimal wrapper around Python's standard library mmap (memory mapped files) find method. Because of this, it *should* work with very large files and be near optimal performance-wise. But its reliability and speed is dependent on the operating system's and Python's memory mapping implementation.
