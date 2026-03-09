@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=82.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "csplitb"
+version = "1.1.0"
+description = "Split binary files on content boundaries"
+authors = [
+    { name = "Michael White", email = "csplitb@mypalmike.com" },
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Operating System :: POSIX",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: GNU General Public License v2 (GPLv2)",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/mypalmike/csplitb"
+
+[project.scripts]
+csplitb = "csplitb.cli:main"

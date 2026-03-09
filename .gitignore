@@ -22,6 +22,9 @@ __pycache__
 # Installer logs
 pip-log.txt
 
+# Virtual env
+venv
+
 # Unit test / coverage reports
 .coverage
 .tox
