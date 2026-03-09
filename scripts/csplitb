@@ -13,9 +13,15 @@ def main(argv = sys.argv):
     parser.add_argument("-n", "--number", type=int, help="Number of zeroes to pad filename. Default is 2", default=2)
     parser.add_argument("-f", "--prefix", help="Output file prefix. Default is xx", default="xx")
     parser.add_argument("-s", "--suffix", help="Output file suffix. Defaults is .dat", default=".dat")
+    parser.add_argument("-a", "--ascii", action="store_true", help="Treat spliton as ASCII text instead of hexadecimal.")
+    parser.add_argument("-k", "--keep-first", action="store_true", help="Store data prior to the first match as the first output file.")
     args = parser.parse_args(argv[1:])
 
-    csplitb = CSplitB(args.spliton, args.infile, args.number, args.prefix, args.suffix)
+    spliton = args.spliton
+    if args.ascii:
+        spliton = spliton.encode().hex()
+
+    csplitb = CSplitB(spliton, args.infile, args.number, args.prefix, args.suffix, args.keep_first)
     return csplitb.run()
 
 

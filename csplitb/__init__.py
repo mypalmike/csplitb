@@ -5,7 +5,7 @@ import mmap
 
 
 class CSplitB(object):
-    def __init__(self, spliton, infile, number, prefix, suffix):
+    def __init__(self, spliton, infile, number, prefix, suffix, keep_first=False):
         spliton_str = binascii.unhexlify(spliton)
         if not prefix:
             prefix = "xx"
@@ -16,6 +16,7 @@ class CSplitB(object):
         self.number = number
         self.prefix = prefix
         self.suffix = suffix
+        self.keep_first = keep_first
         self.number_fmt = "%%0%dd" % self.number
         self.last_idx = -1
         self.count = 0
@@ -34,6 +35,8 @@ class CSplitB(object):
     def rotate(self, idx):
         if self.last_idx != -1:
             self.write(self.mm[self.last_idx:idx])
+        elif self.keep_first and idx > 0:
+            self.write(self.mm[:idx])
         self.last_idx = idx
 
 
